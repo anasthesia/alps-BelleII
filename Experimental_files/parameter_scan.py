@@ -19,7 +19,7 @@ outputfile=re.sub(".dat","_exp.dat",re.sub("\A([\S]+)/",'output/',inputfile))
 # print("output_exp: "+outputfile)
 
 with open(outputfile,'w') as fout:
-    fout.write("#m [GeV],  tau [ps], casb, BRexp(B+->K+mumu)\n")
+    fout.write("#m [GeV],  tau [ps], c, BRexp(B+->K+mumu)\n")
 
 for i in range(params.shape[0]):
 	cmd="root -b -q B2KX_Fig4.C BRmtau.C'({mass},{tau},\"{outfile}\")'".\
@@ -34,7 +34,7 @@ combooutput=re.sub(".dat","_comb.dat",re.sub("\A([\S]+)/",'output_combined_R{0}/
 with open(combooutput,'w') as foutcomb:
     print("output_comb: "+combooutput)
     allparams=[]
-    foutcomb.write("#m [GeV],  tau [ps], casb, BRtheo(B+->K+mumu), BRexp, allowed/excluded(1/0)\n")
+    foutcomb.write("#m [GeV],  tau [ps], c, BRtheo(B+->K+mumu), BRexp, allowed/excluded(1/0)\n")
     
     for i in range(params.shape[0]):
         ifallowed=0
