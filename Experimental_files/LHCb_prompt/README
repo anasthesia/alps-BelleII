@@ -1,0 +1,41 @@
+This ZIP file contains supplemetary material for the publication LHCb-PAPER-2015-036. The files are:
+
+supp.pdf: An overview of the extra figures.
+
+*.pdf, *.png, *.eps, *.C: The figures in variuous formats.
+
+Along with a simple macro for obtaining the upper limits (UL) for any value of mass and lifetime for LHCb-PAPER-2015-036 which uses files:
+
+lhcb_2015_036.root: ROOT file containing splines from which the limit can be obtained for any value of tau.
+
+getUL.C: ROOT macro defining getUL function.
+
+test.C: ROOT macro for testing the code locally.
+
+Use:
+
+It is recommended that you first try and do the following in ROOT (in the directory where this package is located): 
+
+.L test.C
+test(100,0);
+test(100,1);
+
+The first command loads test.C.  The second should produce a relative UL plot for tau = 100ps similar to Fig 2 of the Supplemental Material.  The third command produces the same plot but for absolute limits.  
+
+Please check a few of these to make sure that the file is being read in properly in ROOT.  You should be able to ignore any streamer warnings from ROOT.  
+
+
+Then, you can obtain the UL for any value of mass and lifetime by doing:
+
+.L getUL.C
+getUL(500,10,0)
+
+Etc.  
+
+
+Please send any bug reports or requests to mwill@mit.edu.
+
+
+
+
+
